@@ -16,7 +16,7 @@ const Todo = ({ todo, toggleComplete, removeTodo }) => {
         <input
           type="checkbox"
           checked={todo.completed}
-          onClick={handleCheckboxClick}
+          onChange={handleCheckboxClick}
         />
         <li
           style={{

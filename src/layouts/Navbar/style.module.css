@@ -1,0 +1,23 @@
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+.logo {
+    text-decoration: none;
+    color: brown;
+}
+
+.navLinks .link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: brown;
+    font-weight: 600;
+}
+
+.navLinks .link:hover {
+    color: rgb(33, 22, 22);
+    transition: 1s;
+}
