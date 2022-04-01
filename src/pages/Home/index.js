@@ -5,7 +5,7 @@ import ListTodo from "../../components/ListTodo/index";
 import Navbar from "../../layouts/Navbar";
 
 const Home = () => {
-  const [navMenu, setNavMenu] = useState([
+  const [navMenu] = useState([
     {
       link: "/",
       menu: "Home",

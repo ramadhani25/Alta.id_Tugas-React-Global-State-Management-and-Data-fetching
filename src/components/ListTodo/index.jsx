@@ -3,11 +3,11 @@ import Todo from "../Todo";
 import { useSelector } from "react-redux";
 
 const ListTodo = () => {
-  const todos = useSelector((state) => state.todos.todos);
+  const { todo } = useSelector((state) => state.todos);
 
   return (
     <div>
-      {todos.map((todo) => (
+      {todo.map((todo) => (
         <Todo key={todo.id} todo={todo} />
       ))}
     </div>

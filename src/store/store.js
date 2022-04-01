@@ -11,6 +11,7 @@ import {
   REGISTER,
 } from "redux-persist";
 
+// Reducer
 import todoSlice from "./todoSlice";
 
 const reducers = combineReducers({

@@ -3,7 +3,7 @@ import style from "./style.module.css";
 import Navbar from "../../layouts/Navbar";
 
 const AboutAuthor = () => {
-  const [navMenu, setNavMenu] = useState([
+  const [navMenu] = useState([
     {
       link: "/",
       menu: "Home",

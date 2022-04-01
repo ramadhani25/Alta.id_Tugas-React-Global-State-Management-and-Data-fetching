@@ -1,27 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from "uuid";
 
-const initialState = [];
+const initialState = {
+  todo: [],
+};
 
 export const todoSlice = createSlice({
   name: "todo",
-  initialState: {
-    todos: initialState,
-  },
+  initialState,
   reducers: {
     addTodo: (state, action) => {
       const newData = {
         ...action.payload,
         id: uuidv4(),
       };
-
-      state.todos = [newData, ...state.todos];
+      state.todo = [newData, ...state.todo];
     },
     removeTodo: (state, action) => {
-      state.todos = state.todos.filter((item) => item.id !== action.payload);
+      state.todo = state.todo.filter((item) => item.id !== action.payload);
     },
     toggleComplete: (state, action) => {
-      state.todos = state.todos.map((item) => {
+      state.todo = state.todo.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
