@@ -1,13 +1,17 @@
 import React from "react";
 import style from "./style.module.css";
+import { useDispatch } from "react-redux";
+import { toggleComplete, removeTodo } from "../../store/todoSlice";
 
-const Todo = ({ todo, toggleComplete, removeTodo }) => {
+const Todo = ({ todo }) => {
+  const dispatch = useDispatch();
+
   const handleCheckboxClick = () => {
-    toggleComplete(todo.id);
+    dispatch(toggleComplete(todo.id));
   };
 
   const handleRemoveClick = () => {
-    removeTodo(todo.id);
+    dispatch(removeTodo(todo.id));
   };
 
   return (

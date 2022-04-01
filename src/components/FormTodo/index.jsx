@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
-
+import { useDispatch } from "react-redux";
 import style from "./style.module.css";
+import { addTodo } from "../../store/todoSlice";
 
-const FormTodo = ({ addTodo }) => {
+const FormTodo = () => {
+  const dispatch = useDispatch();
+
   const [todo, setTodo] = useState({
     id: "",
     task: "",
@@ -18,10 +20,11 @@ const FormTodo = ({ addTodo }) => {
     e.preventDefault();
 
     if (todo.task.trim()) {
-      addTodo({ ...todo, id: uuidv4() });
+      dispatch(addTodo(todo));
       setTodo({ ...todo, task: "" });
     } else {
       alert("Isi input terlebih dahulu...");
+      setTodo({ ...todo, task: "" });
     }
   };
 
